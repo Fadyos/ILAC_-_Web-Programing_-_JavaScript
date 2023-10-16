@@ -78,12 +78,13 @@
                             );
                         }
                         else {
-                            if (average < 60 && average >= 0) {
-                                document.write("Your final average is " + average + ". Your grade is F.<br>"
-                                );
+                            if (average < 60) {
+                                document.write("Your final average is " + average + ". Your grade is F.<br>");
                             }
                             else {
-                                document.write("“Sorry, All the marks have to be from minimum 0 to maximum 100!”");
+                                // We add a security for the mark, so this message can't be display because we never be in this case. 
+                                // It's only to be loyal to the assignment.
+                                document.write("Sorry, All the marks have to be from minimum 0 to maximum 100!"); 
                             }
                         }
                     }
