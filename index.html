@@ -39,15 +39,60 @@
                 console.log(courseMarks);
             }
 
-            document.write("All your courses marks:\n")
+            document.write("All your courses marks:<br><br>")
             for (var i = 0; i < numOfCourses; i++) {
-                document.write("\t" + courseMarks[i] + "\n");
+                document.write("&nbsp;&nbsp;" + courseMarks[i] + "<br><br>");
             }
 
 
+            let total = 0;
+
+            for (var i = 0; i < numOfCourses; i++) {
+                total += courseMarks[i];
+
+            }
+
+            let average = total / numOfCourses;
+
+
+            document.write("Total: " + total + "<br>");
+            document.write("Average: " + average + "<br><br>");
+
+            if (average >= 90 && average <= 100) {
+                document.write("Your final average is " + average + ". Your grade is A+.<br>"
+                )
+            }
+            else {
+                if (average >= 80 && average <= 89) {
+                    document.write("Your final average is " + average + ". Your grade is B.<br>"
+                    );
+                }
+                else {
+                    if (average >= 70 && average <= 79) {
+                        document.write("Your final average is " + average + ". Your grade is C.<br>"
+                        );
+                    }
+                    else {
+                        if (average >= 60 && average <= 69) {
+                            document.write("Your final average is " + average + ". Your grade is D.<br>"
+                            );
+                        }
+                        else {
+                            if (average < 60) {
+                                document.write("Your final average is " + average + ". Your grade is F.<br>"
+                                );
+                            }
+                            else {
+                                document.write("“Sorry, All the marks have to be from minimum 0 to maximum 100!”");
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
-        document.write("<p>End of work</p>")
+        document.write("<p>End of work</p>");
 
 
 
