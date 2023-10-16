@@ -27,7 +27,7 @@
                 var mark = parseFloat(userInput);
 
                 // Check if the conversion was successful and mark is a valid number
-                if (!isNaN(mark)) {
+                if (!isNaN(mark) && (mark <= 100 && mark >= 0)) {
                     // Insert the mark into the courseMarks array
                     courseMarks.push(mark);
                 } else {
@@ -52,7 +52,7 @@
 
             }
 
-            let average = total / numOfCourses;
+            let average = (total / numOfCourses).toFixed(2);
 
 
             document.write("Total: " + total + "<br>");
@@ -78,7 +78,7 @@
                             );
                         }
                         else {
-                            if (average < 60) {
+                            if (average < 60 && average >= 0) {
                                 document.write("Your final average is " + average + ". Your grade is F.<br>"
                                 );
                             }
