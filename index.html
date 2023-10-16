@@ -13,7 +13,7 @@
         numOfCourses = parseInt(input);
         console.log(numOfCourses);
 
-        if (isNaN(numOfCourses || numOfCourses < 1)) {
+        if (isNaN(numOfCourses) || numOfCourses < 1) {
             document.write("<p>Invalid Input</p>");
         }
         else {
@@ -38,6 +38,12 @@
 
                 console.log(courseMarks);
             }
+
+            document.write("All your courses marks:\n")
+            for (var i = 0; i < numOfCourses; i++) {
+                document.write("\t" + courseMarks[i] + "\n");
+            }
+
 
         }
 
