@@ -8,10 +8,19 @@
 
 <body>
     <script>
+        let input = prompt("How many courses did you finish? ", defaul = 0); // defaul is an equivalent to any, which is the default 
+        //value of the input
+        numOfCourses = parseInt(input);
+        console.log(numOfCourses);
 
+        if(isNaN(numOfCourses))
+        {
+            document.write("<p>Invalid Input</p>");
+        }
+
+        document.write("<p>End of work</p>")
 
     </script>
-
 
 </body>
 
