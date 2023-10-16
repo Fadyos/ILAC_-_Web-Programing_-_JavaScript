@@ -13,12 +13,38 @@
         numOfCourses = parseInt(input);
         console.log(numOfCourses);
 
-        if(isNaN(numOfCourses))
-        {
+        if (isNaN(numOfCourses || numOfCourses < 1)) {
             document.write("<p>Invalid Input</p>");
+        }
+        else {
+            let courseMarks = [];
+
+            for (var i = 0; i < numOfCourses; i++) {
+                // Ask the user to enter the course mark
+                var userInput = prompt("Enter the mark for Course " + (i + 1) + ": ");
+
+                // Convert the user input to a number (assuming it's a valid numeric input)
+                var mark = parseFloat(userInput);
+
+                // Check if the conversion was successful and mark is a valid number
+                if (!isNaN(mark)) {
+                    // Insert the mark into the courseMarks array
+                    courseMarks.push(mark);
+                } else {
+                    // Handle the case where the user entered something that is not a valid number
+                    console.log("Invalid input. Please enter a valid number.");
+                    i--; // Decrement the loop variable to repeat this iteration
+                }
+
+                console.log(courseMarks);
+            }
+
         }
 
         document.write("<p>End of work</p>")
+
+
+
 
     </script>
 
